@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 25px;
+        }
+        div{
+            padding:25px;
+            border:25px;
+            max-width:600px;
+            margin: auto;
+            text-align: center;
+            background-color: aqua;
+            border-radius:15%;
+            border:5px solid black;
+        }
+        input{
+            width:70%;
+            padding:10px;
+            border-radius:5px;
+            margin-top:10px;
+            margin-bottom:20px;
+            border-radius:10%;
+            border:3px solid black;
+        }
+        button{
+            background-color: aqua;
+            border: none;
+            box-shadow: 0px 0px 9px black;
+            border-radius:5%;
+        }
+        button:active{
+            transform: scale(1.1,1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculate area of triagle</h1><br>
+         <label for="side 1"></label><br>
+         <input type="text"id="a"placeholder="Enter the first side"required>
+         <label for="side 2"></label><br>
+         <input type="text"placeholder="Enter the second side"id="b"required>
+         <label for="side 2"></label><br>
+         <input type="text"id="c"placeholder="Enter the third side"required><br>
+         Area<h1 id="res"></h1>
+         <button onclick="cal()">Calculate</button>
+    </div>
+</body>
+</html>
+<script>
+    function cal(){
+        var a=parseFloat(document.getElementById("a").value);
+        var b=parseFloat(document.getElementById("b").value);
+        var c=parseFloat(document.getElementById("c").value);
+        if((a+b<=c)||(a+c<=b)||(b+c<=a))
+    {
+        document.getElementById("res").innerHTML="invalid triagle";
+    }
+    else{
+        s=(a+b+c)/2
+        area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        document.getElementById("res").innerHTML=area;
+    }
+    }
+</script>
